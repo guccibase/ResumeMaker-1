@@ -1,0 +1,129 @@
+@mixin fullCenter() {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @media only screen and (max-width: $belowTablet) {
+    left: unset;
+    margin-left: auto;
+    margin-right: auto;
+    position: unset;
+    top: unset;
+    transform: unset;
+  }
+}
+
+@mixin coverBg($bg, $attachment) {
+  background: transparent url($bg) no-repeat $attachment center center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  @media only screen and (max-width: $belowTablet) {
+    background-attachment: scroll;
+    background-size: auto;
+  }
+}
+
+@mixin circle($size) {
+  border-radius: 50%;
+  display: inline-block;
+  height: $size;
+  overflow: hidden;
+  width: $size;
+  img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@mixin transformRotateY($deg) {
+  -webkit-transform: rotateY($deg);
+  -moz-transform: rotateY($deg);
+  -ms-transform: rotateY($deg);
+  -o-transform: rotateY($deg);
+  transform: rotateY($deg);
+}
+@mixin transition($selector, $duration, $effect, $delay){
+  -webkit-transition: $selector $duration $effect $delay;
+  -moz-transition: $selector $duration $effect $delay;
+  -ms-transition: $selector $duration $effect $delay;
+  -o-transition: $selector $duration $effect $delay;
+  transition: $selector $duration $effect $delay;
+}
+
+@mixin ripplaButtonReaction($color, $lightness){
+  &:hover {
+    background-color: lighten($color, $lightness);
+  }
+  &.bordered {
+    &:hover, &:active, &:visited {
+      &:hover {
+        background-color: lighten($color, 3*$lightness);
+      }
+      border-color: lighten($color, $lightness);
+      color: lighten($color, $lightness);
+    }
+  }
+}
+
+@mixin circleCounter($size, $bgColor, $color){
+  background-color: $bgColor;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  color: $color;
+  display: inline-block;
+  font-size: $size;
+  font-weight: bold;
+  height: $size*2;
+  margin-left: $size;
+  padding-top: $size*.2;
+  text-align: center;
+  width: $size*2;
+}
+@mixin borderRadius($radius){
+  border-radius: $radius;
+}
+@mixin boxShadow($hoff, $voff, $blur, $fill, $color) {
+  -webkit-box-shadow: $hoff $voff $blur $fill $color;
+  -moz-box-shadow: $hoff $voff $blur $fill $color;
+  box-shadow: $hoff $voff $blur $fill $color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-clip: padding-box;
+}

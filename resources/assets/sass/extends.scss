@@ -1,0 +1,25 @@
+.shining-lines {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  > span {
+    background-color: $colorWhite;
+    position: absolute;
+    height: $defaultRem*3;
+    width: $defaultRem/3;
+    &:first-child, &:last-child {
+      top: 50%;
+    }
+    &:first-child {
+      right: -20px;
+      transform: rotate(80deg);
+    }
+    &:last-child {
+      left: -20px;
+      transform: rotate(-80deg);
+    }
+  }
+}
+.rounded {
+  @include borderRadius($defaultRem);
+}
