@@ -40,6 +40,13 @@ class BaseController extends Controller
 
                     view()->share('login', true);
 
+                    $ResumeRepository = app(\App\Repositories\ResumeRepository::class);
+                    $InformationRepository = app(\App\Repositories\InformationRepository::class);
+
+                    $resumeId = $ResumeRepository->findUser($this->user->id);
+                    $information = $InformationRepository->model->select('image')->where('resume_id', $resumeId)->first();
+
+                    view()->share('profile_image', $information->image);
                 }
 
             }

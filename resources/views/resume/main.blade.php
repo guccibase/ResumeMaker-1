@@ -4,7 +4,15 @@
 @stop
 @section('content')
 
-<form method="post" enctype="multipart/form-data" name="resumeMakerForm">
+<style>
+
+    .my-auto {
+        margin-top: 0;
+    }
+
+</style>
+
+<form method="post" enctype="multipart/form-data" name="resumeMakerForm" id="resumeMakerForm">
 
     {{ csrf_field() }}
 
@@ -24,17 +32,29 @@
                     </div>
                 </div>
 
-                <div class="col-xs-4 col-md-4">
-                    <div class="form-group">
-                        <label for="middle_name">Middle Name</label>
-                        <input name="middle_name" type="text" class="form-control" id="middle_name" placeholder="Middle Name">
-                    </div>
-                </div>
+                {{--<div class="col-xs-4 col-md-4">--}}
+                    {{--<div class="form-group">--}}
+                        {{--<label for="middle_name">Middle Name</label>--}}
+                        {{--<input name="middle_name" type="text" class="form-control" id="middle_name" placeholder="Middle Name">--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
                 <div class="col-xs-4 col-md-4">
                     <div class="form-group required">
                         <label for="last_name">Last Name</label>
                         <input name="last_name" required type="text" class="form-control" id="last_name" placeholder="Last Name">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-12 col-md-12">
+                    <div class="form-group">
+                        <label for="image">Personal Image</label>
+                        <input name="image" type="file" id="image" >
+                        {{--<p class="help-block">Example block-level help text here.</p>--}}
                     </div>
                 </div>
 
@@ -54,26 +74,14 @@
                 <div class="col-xs-4 col-md-4">
                     <div class="form-group required">
                         <label for="cellphone">Cellphone</label>
-                        <input name="cellphone" required type="text" class="form-control" id="cellphone" placeholder="Cellphone">
+                        <input name="cellphone" required type="number" class="form-control" id="cellphone" placeholder="Cellphone">
                     </div>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input name="phone" type="text" class="form-control" id="phone" placeholder="Phone">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col-xs-12 col-md-12">
-                    <div class="form-group">
-                        <label for="image">Personal Image</label>
-                        <input name="image" type="file" id="image" >
-                        {{--<p class="help-block">Example block-level help text here.</p>--}}
+                        <input name="phone" type="number" class="form-control" id="phone" placeholder="Phone">
                     </div>
                 </div>
 
@@ -110,7 +118,7 @@
                 <div class="col-xs-12 col-md-12">
                     <div class="form-group required">
                         <label for="address">Address</label>
-                        <textarea name="address" required class="form-control" id="address" placeholder="Address"></textarea>
+                        <textarea name="address" maxlength="250" required class="form-control" id="address" placeholder="Address"></textarea>
                     </div>
                 </div>
             </div>
@@ -229,7 +237,7 @@
                                 <div class="col-xs-12 col-md-12">
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <textarea name="experience_description" class="form-control" id="description" placeholder="Description"></textarea>
+                                        <textarea maxlength="250" name="experience_description" class="form-control" id="description" placeholder="Description"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -267,8 +275,8 @@
                             <div class="row">
                                 <div class="col-xs-12 col-md-12">
                                     <div class="form-group required">
-                                        <label for="school">School</label>
-                                        <input name="education_school" type="text" class="form-control" id="school" placeholder="School">
+                                        <label for="school">University</label>
+                                        <input name="education_school" type="text" class="form-control" id="school" placeholder="University">
                                     </div>
                                 </div>
                             </div>
@@ -304,7 +312,7 @@
                                 <div class="col-xs-12 col-md-12">
                                     <div class="form-group">
                                         <label for="activities_and_societies">Activities and societies</label>
-                                        <textarea name="education_activities_and_societies" class="form-control" id="activities_and_societies" placeholder="Activities and societies"></textarea>
+                                        <textarea maxlength="250" name="education_activities_and_societies" class="form-control" id="activities_and_societies" placeholder="Activities and societies"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -336,7 +344,7 @@
                                 <div class="col-xs-12 col-md-12">
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <textarea name="education_description" class="form-control" id="description" placeholder="Description"></textarea>
+                                        <textarea maxlength="250" name="education_description" class="form-control" id="description" placeholder="Description"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -391,16 +399,16 @@
                 <div class="col-xs-12 col-md-12">
                     <div class="form-group">
                         <label for="interests">Interests</label>
-                        <textarea rows="10" name="interests" class="form-control" id="interests" placeholder="Interests"></textarea>
+                        <asiaa rows="10" name="interests" class="form-control" id="interests" placeholder="Interests"></asiaa>
                     </div>
                 </div>
             </div>
 
         </div>
-    </section>
+    </section>.en
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
+        <div class="m-auto">
             <h2 class="mb-5">Awards &amp; Certifications</h2>
 
             <div class="row">

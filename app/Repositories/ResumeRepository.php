@@ -16,9 +16,9 @@ class ResumeRepository
 
     public function findUser($userId)
     {
-        $res = $this->model->where('user_id', $userId)->first();
+        $res = $this->model->where('user_id', $userId)->orderBy('id', 'DESC')->first();
 
-        if($res)
+        if ($res)
             return $res->id;
         return false;
     }

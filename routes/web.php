@@ -36,9 +36,14 @@ Route::get('/signout', 'Auth\SingInController@destroy')->name('signout-action');
 
 Route::group(['middleware' => 'auth'], function () {
 
+
+    Route::get('/preview', [ 'as' => 'main.preview', 'uses' => 'Resume\resumeController@preview']);
+    Route::get('/pdf', [ 'as' => 'main.pdf', 'uses' => 'Resume\resumeController@pdf']);
+
+
     Route::get('/profile', [ 'as' => 'profile', 'uses' => 'resumeController@profile']);
 
-    Route::get('/resume/', [ 'as' => 'resume.view', 'uses' => 'resumeController@viewresume']);
+    //Route::get('/resume/', [ 'as' => 'resume.view', 'uses' => 'resumeController@viewresume']);
 });
 
 
